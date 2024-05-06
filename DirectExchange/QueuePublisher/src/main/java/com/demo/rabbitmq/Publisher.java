@@ -1,14 +1,11 @@
 package com.demo.rabbitmq;
 
-
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
-
-
 
 public class Publisher {
 
@@ -19,7 +16,7 @@ public class Publisher {
 		
 		//String message = "First message from RabbitMQ";
 		
-		String[] messages = {"First", "Second", "Third", "Fourth","First2", "Second2", "Third2", "Fourth2"};
+		String[] messages = {"First", "Second", "Third", "Fourth"};
 		
 		for(String message : messages) {
 			channel.basicPublish("", "Queue-1", null, message.getBytes());
