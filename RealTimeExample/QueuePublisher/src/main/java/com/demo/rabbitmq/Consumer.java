@@ -18,6 +18,7 @@ public class Consumer {
 		DeliverCallback deliverCallback = (consumerTag, delivery) -> {
 			String message = new String (delivery.getBody());
 			System.out.println("Message received = " + message);
+	
 		};
 		channel.basicConsume("Queue-1", true, deliverCallback, consumerTag -> {});
 	}
